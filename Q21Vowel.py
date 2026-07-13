@@ -17,6 +17,6 @@ def countType(text):
                 c+=1
     return v,c
 
-v,c=countType("aaaaaaaabbb34")
+v,c=countType("aaaaaaaabbbeeee34")
 print(v)
 print(c)

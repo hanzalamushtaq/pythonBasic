@@ -6,7 +6,8 @@
 #mein add karein aur aakhir mein print karein.
 
 employees={}
-for i in range(3):
+n=int(input("Number of employees:"))
+for i in range(n):
     key=input("Enter your name: ")
     val=int(input("Enter your salary: "))
     employees[key]=val

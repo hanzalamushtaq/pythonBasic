@@ -12,4 +12,4 @@ def sumNaturals(n):
         i+=1
     return sum
 
-print(sumNaturals(10))
+print(sumNaturals(4))
