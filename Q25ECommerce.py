@@ -10,4 +10,5 @@ for i in cart:
     if i>=100:
         print(f"Total: {i-i*.1}")
     else:
+        print(f"{i}")
         continue
