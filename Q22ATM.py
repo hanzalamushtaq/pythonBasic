@@ -11,7 +11,7 @@ while balance:
     if amount<=balance:
         print(f"{amount} withdraw")
         balance-=amount
-        print(f"{balance} remaining")
+        print(f"{balance} is  remaining")
     elif balance==0:
         break
     else:
