@@ -12,4 +12,6 @@ class Temperature:
     
 temp = Temperature()
 celsius = temp.FtoC(100)
+
+print(Temperature.FtoC(100))
 print(f"100°F is equal to {celsius:.2f}°C")

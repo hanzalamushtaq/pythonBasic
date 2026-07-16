@@ -14,4 +14,5 @@ class Weather:
         return self.__temperature
     
 w1=Weather(25.5)
+w1.__temperature=30 
 print(w1.get_temperature())
