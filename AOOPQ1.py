@@ -13,5 +13,6 @@ class Account:
         return self.__balance
         
 ac1 = Account(1000)
-ac1.__balance = 2000  
+ac1.__balance = 2000
+#Technically, this will not raise an error, but it will not change the private attribute __balance. Instead, it will create a new attribute __balance in the instance ac1. The original private attribute __balance remains unchanged.  
 print(ac1.showBalance())
