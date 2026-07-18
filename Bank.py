@@ -1,31 +1,44 @@
-# Bank App project using OOP concepts
-class Employee():
-    __ID = 1000
-    def __init__(self, name, age,address):
-        self.name = name
-        self.age = age
-        Employee.__ID += 1
-        self.employee_id = Employee.__ID
-        self.address = address
-class Address():
-    def __init__(self, street, city, state, zip_code):
-        self.street = street
-        self.city = city
-        self.state = state
-        self.zip_code = zip_code
-#Manager can create/remove edit account details
+class BankAccount:
+    __total = 0
 
-class Manager(Employee):
-    def __init__(self, name, age,salary,address):
-        super().__init__(name, age,address)
-        self.salary = salary
-        self.employee_id = Employee.__ID
-    def create_account(self, account):
-        self.account = account
-class cashier(Employee):
-    def __init__(self, name, age,salary,address):
-        super().__init__(name, age,address)
-        self.salary = salary
-        self.employee_id = Employee.__ID
-        
-        
+    def __init__(self, owner, initial_deposit):
+        self.owner = owner
+        BankAccount.__total += 1
+        self.__account_no = 1000 + BankAccount.__total
+        self.__balance = self.__set_balance(initial_deposit)
+        print(f"Account created Successfully!\nAccount holder: {self.owner} \nAccount number: {self.__account_no} \nInitial balance: {self.__balance}")
+        print("\n")
+    # setter for balance
+    def __set_balance(self, amount):
+        if amount>=0 and amount!=str:
+
+            return amount
+        else:
+            print("Error: Invalid balance amount.")
+            return 0
+    # Getter for balance
+    def get_balance(self):
+        return self.__balance
+    # Secure Deposit
+    def set_deposit(self, amount):
+        if self.__set_balance(amount) > 0:
+            self.__balance += self.__set_balance(amount)
+            print(f"Deposit of {amount} successful.\nNew balance: {self.__balance}")
+    # Secure Withdrawal Method
+    def withdraw(self, amount):
+        if amount > self.__balance:
+            print("Error: Insufficient funds.")
+        else:
+            self.__balance -= self.__set_balance(amount)
+            print(f"Withdrawal of {amount} successful.\nNew balance: {self.__balance}")
+    @staticmethod
+    def get_total_accounts():
+        return BankAccount.__total
+    
+    
+ac=BankAccount("John Doe", 500)
+ac.set_deposit(200)
+ac.withdraw(100)
+ac2=BankAccount("Jane Smith", 1000)
+ac3=BankAccount("Alice Johnson", 1500)
+print(f"Total accounts created: {BankAccount.get_total_accounts()}")
