@@ -10,7 +10,7 @@ class BankAccount:
         print("\n")
     # setter for balance
     def __set_balance(self, amount):
-        if amount>=0 and amount!=str:
+        if isinstance(amount, (int, float)) and amount >= 0:
 
             return amount
         else:
