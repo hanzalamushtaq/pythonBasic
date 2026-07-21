@@ -11,7 +11,6 @@ class Student(Member):
         super().__init__(name, age)
         self.__Limit = 5
 
-    # Method Overriding
     def get_limit(self):
         return self.__Limit
 
@@ -20,10 +19,8 @@ class Teacher(Member):
         super().__init__(name, age)
         self.__Limit = 10
 
-    # Method Overriding
     def get_limit(self):
         return self.__Limit
-
 
 class Book:
     def __init__(self, title, author):
@@ -72,7 +69,6 @@ class Library:
             else:
                 return "This book does not belong to this library."
         return "Invalid Book or Member Object"
-
 
 lib = Library()
 b1 = Book("Python Basics", "John Doe")
